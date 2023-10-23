@@ -122,7 +122,7 @@ export default {
           name: item.title,
           country: 'Noma\'lum',
           show: item.rank ** 2 * 51,
-          like: true,
+          like: false,
         }))
         this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit)
         this.movies = newArr
