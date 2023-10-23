@@ -61,7 +61,7 @@ export default {
   methods: {
     async createMovie(item) {
       try {
-        const response = await axios.post('https://jsonplaceholder.typicode.com/posts', item)
+        const response = await axios.post('https://raw.githubusercontent.com/hjorturlarsen/IMDB-top-100/master/data/movies.json', item)
         this.movies.push(item)
       } catch (error) {
         alert(error.message())
@@ -77,7 +77,7 @@ export default {
     },
     async onRemoveHandler(id) {
       try {
-        const response = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        const response = await axios.delete(`https://raw.githubusercontent.com/hjorturlarsen/IMDB-top-100/master/data/movies.json/${id}`)
         this.movies = this.movies.filter(c => c.id !== id)
         console.log(response)
       } catch (error) {
@@ -111,7 +111,7 @@ export default {
     async fetchMovie() {
       try {
         this.isLoading = true
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+        const response = await axios.get('https://raw.githubusercontent.com/hjorturlarsen/IMDB-top-100/master/data/movies.json', {
           params: {
             _limit: this.limit,
             _page: this.page,
