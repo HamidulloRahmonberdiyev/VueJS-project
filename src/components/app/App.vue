@@ -121,7 +121,7 @@ export default {
           id: item.id,
           name: item.title,
           country: 'Noma\'lum',
-          show: item.id ** 2 * 51,
+          show: item.rank ** 2 * 51,
           like: true,
         }))
         this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit)
